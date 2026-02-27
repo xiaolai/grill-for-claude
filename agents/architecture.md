@@ -1,5 +1,4 @@
 ---
-name: architecture
 description: Use this agent to deeply analyze core architecture — entry points, module boundaries, dependency graph, data flow, and structural patterns. Part of the grill deep-dive phase.
 
   <example>
@@ -11,7 +10,7 @@ description: Use this agent to deeply analyze core architecture — entry points
   </commentary>
   </example>
 
-model: sonnet
+model: opus
 color: blue
 tools: Read, Glob, Grep
 skills:

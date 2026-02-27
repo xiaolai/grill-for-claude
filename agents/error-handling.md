@@ -1,5 +1,4 @@
 ---
-name: error-handling
 description: Use this agent to analyze error handling, logging, observability, and configuration management across a codebase. Part of the grill deep-dive phase.
 
   <example>
@@ -11,7 +10,7 @@ description: Use this agent to analyze error handling, logging, observability, a
   </commentary>
   </example>
 
-model: sonnet
+model: opus
 color: yellow
 tools: Read, Glob, Grep
 skills:

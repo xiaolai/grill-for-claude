@@ -1,5 +1,4 @@
 ---
-name: testing
 description: Use this agent to analyze test coverage, test quality, CI/CD setup, and testing infrastructure. Part of the grill deep-dive phase.
 
   <example>
@@ -11,7 +10,7 @@ description: Use this agent to analyze test coverage, test quality, CI/CD setup,
   </commentary>
   </example>
 
-model: sonnet
+model: opus
 color: green
 tools: Read, Glob, Grep
 skills:

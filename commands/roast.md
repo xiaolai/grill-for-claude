@@ -37,6 +37,8 @@ Use AskUserQuestion to present the review options.
 
 4. **ADR Style** — 8-12 Architecture Decision Records each with Context, Decision, Alternatives, Consequences, and Migration notes.
 
+5. **Paranoid Mode (Edge Case Gauntlet)** — Assumes everything that can go wrong will go wrong. Launches the edge-case agent alongside the standard 4. For every component: "What's the worst that could happen?", race conditions, boundary values, partial failures, implicit assumptions, and cascading failure chains. Produces a ranked risk matrix with exploit/failure scenarios.
+
 **Add-on pressure tests** (multi-select):
 
 - **Scale stress**: "Assume traffic grows 100x and team doubles — what breaks first?"
@@ -50,16 +52,24 @@ Use AskUserQuestion to present the review options.
 
 ## Step 3: Deep Dive
 
-Launch 4 specialized agents via the Task tool **in parallel**. Include the recon report summary in each agent's Task prompt so they can focus on the detected stack instead of re-discovering it:
+Launch specialized agents via the Task tool **in parallel**. Include the recon report summary in each agent's Task prompt so they can focus on the detected stack instead of re-discovering it.
+
+**Standard agents** (always launched):
 
 1. **`grill:architecture`** agent — Core architecture analysis
 2. **`grill:error-handling`** agent — Error handling & observability
 3. **`grill:security`** agent — Security surface analysis
 4. **`grill:testing`** agent — Testing & CI/CD analysis
 
+**If the user selected Paranoid Mode (style 5)**, also launch:
+
+5. **`grill:edge-cases`** agent — Edge case, race condition, and failure mode hunting
+
+This means Paranoid Mode launches **5 agents** in parallel.
+
 If an agent returns no findings for an area, that is a valid result — include it as a `[GOOD]` finding in the synthesis.
 
-Wait for all agents to complete before proceeding. If any agent fails or times out, note the failure in the final report and proceed with the results from the agents that succeeded.
+Wait for all agents to complete before proceeding (use the Task tool's default timeout). If any agent fails or returns no output, note the failure in the final report and proceed with the results from the agents that succeeded.
 
 ## Step 4: Execute the Chosen Review
 
@@ -69,6 +79,12 @@ Every single point MUST follow the evidence standards defined in the `grill-core
 
 ### For each add-on selected, add a dedicated section with the same rigor.
 
+### Paranoid Mode additions (style 5 only)
+
+If Paranoid Mode was selected, the synthesis MUST include an additional section:
+
+**Edge Case Risk Matrix** — A ranked table of edge-case scenarios discovered by the edge-cases agent, ordered by Risk (Impact x Likelihood). Include columns: Scenario, Likelihood, Impact, Risk, Component, File.
+
 ## Step 5: Executive Summary
 
 End with:
@@ -76,3 +92,4 @@ End with:
 1. **One-paragraph verdict**: Overall codebase health and biggest risk
 2. **Top 3 actions**: If you could only do 3 things, what and why
 3. **Confidence level**: How confident you are in each major recommendation (High/Medium/Low) and what would increase your confidence
+4. **Paranoid Verdict** (style 5 only): The single scariest thing found — the one edge case or failure mode that, if triggered, would cause the most damage
