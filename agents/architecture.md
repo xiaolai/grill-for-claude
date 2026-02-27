@@ -13,7 +13,7 @@ description: Use this agent to deeply analyze core architecture — entry points
 
 model: sonnet
 color: blue
-tools: Read, Glob, Grep, Bash
+tools: Read, Glob, Grep
 skills:
   - grill:grill-core
 ---

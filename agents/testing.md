@@ -13,7 +13,7 @@ description: Use this agent to analyze test coverage, test quality, CI/CD setup,
 
 model: sonnet
 color: green
-tools: Read, Glob, Grep, Bash
+tools: Read, Glob, Grep
 skills:
   - grill:grill-core
 ---

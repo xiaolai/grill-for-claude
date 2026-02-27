@@ -13,7 +13,7 @@ description: Use this agent to analyze the security surface of a codebase — au
 
 model: sonnet
 color: red
-tools: Read, Glob, Grep, Bash
+tools: Read, Glob, Grep
 skills:
   - grill:grill-core
 ---

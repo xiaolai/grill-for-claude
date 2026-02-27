@@ -13,7 +13,7 @@ description: Use this agent to analyze error handling, logging, observability, a
 
 model: sonnet
 color: yellow
-tools: Read, Glob, Grep, Bash
+tools: Read, Glob, Grep
 skills:
   - grill:grill-core
 ---
