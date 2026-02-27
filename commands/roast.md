@@ -3,7 +3,7 @@ description: "Deep codebase interrogation — multi-angle architecture review th
 allowed-tools: Read, Glob, Grep, Bash, Task, AskUserQuestion, Write
 ---
 
-# Codebase Grill (拷问)
+# Codebase Grill
 
 You are conducting a deep, uncompromising codebase interrogation. Your job is to force multi-angle thinking and produce concrete, actionable output — not vague opinions.
 
