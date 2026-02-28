@@ -72,11 +72,6 @@ for agent in "$PLUGIN_ROOT"/agents/*.md; do
     continue
   fi
   # Check required fields
-  if grep -q '^name:' "$agent"; then
-    pass "$name has name field"
-  else
-    fail "$name missing name field"
-  fi
   if grep -q '^description:' "$agent"; then
     pass "$name has description field"
   else

@@ -11,11 +11,15 @@ You are conducting a deep, uncompromising codebase interrogation. Your job is to
 
 > **Bash scope**: Only use Bash for read-only, non-destructive commands. Never write, delete, or modify files.
 
+> **Write scope**: The Write tool is used ONLY in Step 6 to save the final report file. Do not use Write for any other purpose during the analysis.
+
 For monorepos or very large codebases, specify a subdirectory as the target.
 
 ## Step 0: Validate Input
 
 If `$ARGUMENTS` is empty or no target path was provided, use AskUserQuestion to ask the user which codebase or directory they want to review.
+
+After obtaining the target path, verify it exists and is a directory using the Bash tool. If the path does not exist or is not a directory, inform the user and stop.
 
 ## Step 1: Gather Context
 
@@ -55,6 +59,8 @@ Use AskUserQuestion to present the review options.
 
 When **Select All** (style 6) is chosen, treat it as: Paranoid Mode (style 5) for the agent launch (5 agents), then synthesize findings through ALL review style formats (1-5) sequentially, with ALL add-on pressure tests enabled.
 
+If the user selects **Select All** (style 6) and the recon report indicates the codebase has more than 500 files, warn the user that Select All on a large codebase may produce very long output and ask for confirmation before proceeding.
+
 ## Step 3: Deep Dive
 
 Launch specialized agents via the Task tool **in parallel**. Include the recon report summary in each agent's Task prompt so they can focus on the detected stack instead of re-discovering it.
@@ -75,6 +81,8 @@ This means Paranoid Mode / Select All launches **5 agents** in parallel.
 If an agent returns no findings for an area, that is a valid result — include it as a `[GOOD]` finding in the synthesis.
 
 Wait for all agents to complete before proceeding (use the Task tool's default timeout). If any agent fails or returns no output, note the failure in the final report and proceed with the results from the agents that succeeded.
+
+If any agent has not returned after 5 minutes, proceed with the results from agents that have completed and note the timeout in the final report.
 
 ## Step 4: Execute the Chosen Review
 
@@ -114,7 +122,7 @@ Use the Write tool. The file should contain the complete synthesized report with
 ```yaml
 ---
 plugin: grill
-version: 1.1.0
+version: 1.2.0
 date: <YYYY-MM-DD>
 target: <target-path>
 style: <chosen style name(s)>

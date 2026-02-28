@@ -12,6 +12,8 @@ Grill launches 5-6 specialized agents in parallel to interrogate your codebase f
 - **Evidence-based findings**: every finding requires file paths, line references, severity tags, and effort estimates
 - **Fixing plan**: phased action plan (Critical > High > Medium > Low) with dependency graph and effort totals
 
+Part of the [xiaolai plugin marketplace](https://github.com/xiaolai/claude-plugin-marketplace).
+
 ## Installation
 
 Add the marketplace (once):
