@@ -1,10 +1,16 @@
 {
   "name": "grill",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Deep codebase interrogation — multi-angle architecture review that forces rigorous, actionable analysis",
   "author": {
     "name": "xiaolai"
   },
   "license": "MIT",
-  "keywords": ["code-review", "architecture", "interrogation", "audit", "codebase-analysis"]
+  "keywords": [
+    "code-review",
+    "architecture",
+    "interrogation",
+    "audit",
+    "codebase-analysis"
+  ]
 }
