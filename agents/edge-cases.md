@@ -10,6 +10,15 @@ description: Use this agent to hunt for edge cases, race conditions, boundary va
   </commentary>
   </example>
 
+  <example>
+  Context: User experienced a production incident from an unexpected input and wants to harden the system
+  user: "We had an outage last week because a batch job received an empty list and blew up — I want to find all similar assumptions in the codebase"
+  assistant: "I'll use the edge-cases agent to systematically search for implicit assumptions about non-empty inputs, boundary values, and partial failure states across the codebase."
+  <commentary>
+  Edge-cases agent is the right choice when hunting for a class of assumption-violation bugs, not just during broad grill reviews.
+  </commentary>
+  </example>
+
 model: opus
 color: magenta
 tools: Read, Glob, Grep

@@ -10,6 +10,15 @@ description: Use this agent to analyze test coverage, test quality, CI/CD setup,
   </commentary>
   </example>
 
+  <example>
+  Context: User is onboarding to a project and needs to understand what is and isn't tested
+  user: "Before I start adding features, I need to know which parts of this codebase have test coverage and which are completely untested"
+  assistant: "I'll use the testing agent to map coverage across modules, identify the riskiest untested paths, and assess the CI/CD setup."
+  <commentary>
+  Testing agent is the right choice for coverage mapping before new development, not just post-hoc audits.
+  </commentary>
+  </example>
+
 model: opus
 color: green
 tools: Read, Glob, Grep

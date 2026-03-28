@@ -10,6 +10,15 @@ description: Use this agent to deeply analyze core architecture — entry points
   </commentary>
   </example>
 
+  <example>
+  Context: User suspects circular dependencies are causing build issues
+  user: "We keep hitting weird import errors — I think there might be circular dependencies somewhere"
+  assistant: "I'll use the architecture agent to map the dependency graph and identify any circular imports."
+  <commentary>
+  Architecture agent is the right choice when the problem is structural — dependency direction, module coupling, or circular references.
+  </commentary>
+  </example>
+
 model: opus
 color: blue
 tools: Read, Glob, Grep

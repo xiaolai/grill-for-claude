@@ -10,6 +10,15 @@ description: Use this agent to analyze the security surface of a codebase — au
   </commentary>
   </example>
 
+  <example>
+  Context: User is preparing for a security audit and wants to find issues before auditors do
+  user: "We have an external pen test next week — what are the most likely issues they'll find?"
+  assistant: "I'll use the security agent to scan for auth gaps, injection vectors, hardcoded secrets, and dependency vulnerabilities before the pen testers arrive."
+  <commentary>
+  Security agent is useful proactively, not only during grill reviews — it covers concrete exploit scenarios, not just theoretical risks.
+  </commentary>
+  </example>
+
 model: opus
 color: red
 tools: Read, Glob, Grep

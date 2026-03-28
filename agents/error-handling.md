@@ -10,6 +10,15 @@ description: Use this agent to analyze error handling, logging, observability, a
   </commentary>
   </example>
 
+  <example>
+  Context: User reports that errors are being silently swallowed in production
+  user: "We're seeing silent failures — things break but nothing shows up in logs"
+  assistant: "I'll use the error-handling agent to find catch blocks that swallow errors and trace the logging configuration."
+  <commentary>
+  Silent failures and missing observability are the primary targets of the error-handling agent, not just whether try/catch is present.
+  </commentary>
+  </example>
+
 model: opus
 color: yellow
 tools: Read, Glob, Grep
