@@ -1,4 +1,5 @@
 ---
+name: roast
 description: "Deep codebase interrogation — multi-angle architecture review that forces rigorous, actionable analysis"
 allowed-tools: Read, Glob, Grep, Bash, Task, AskUserQuestion, Write
 ---

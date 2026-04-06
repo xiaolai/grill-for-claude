@@ -1,4 +1,5 @@
 ---
+name: edge-cases
 description: Use this agent to hunt for edge cases, race conditions, boundary values, partial failures, and implicit assumptions across a codebase. Part of the grill deep-dive phase (Paranoid Mode).
 
   <example>

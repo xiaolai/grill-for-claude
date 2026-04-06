@@ -1,4 +1,5 @@
 ---
+name: recon
 description: Use this agent for initial codebase reconnaissance — quickly surveys project structure, tech stack, config files, and existing documentation to establish context before deeper analysis.
 
   <example>
