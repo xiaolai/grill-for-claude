@@ -1,4 +1,5 @@
 ---
+name: architecture
 description: Use this agent to deeply analyze core architecture — entry points, module boundaries, dependency graph, data flow, and structural patterns. Part of the grill deep-dive phase.
 
   <example>

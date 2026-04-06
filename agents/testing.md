@@ -1,4 +1,5 @@
 ---
+name: testing
 description: Use this agent to analyze test coverage, test quality, CI/CD setup, and testing infrastructure. Part of the grill deep-dive phase.
 
   <example>

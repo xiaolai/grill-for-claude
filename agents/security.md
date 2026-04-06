@@ -1,4 +1,5 @@
 ---
+name: security
 description: Use this agent to analyze the security surface of a codebase — authentication, authorization, input validation, secrets handling, and dependency vulnerabilities. Part of the grill deep-dive phase.
 
   <example>
