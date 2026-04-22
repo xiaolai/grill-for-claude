@@ -21,14 +21,14 @@ if [ ! -f "$MANIFEST" ]; then
 else
   pass "plugin.json exists"
   # Validate JSON syntax
-  if python3 -c "import json; json.load(open('$MANIFEST'))" 2>/dev/null; then
+  if python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$MANIFEST" 2>/dev/null; then
     pass "plugin.json is valid JSON"
   else
     fail "plugin.json is not valid JSON"
   fi
   # Check required fields
   for field in name version description; do
-    if python3 -c "import json; d=json.load(open('$MANIFEST')); assert '$field' in d" 2>/dev/null; then
+    if python3 -c "import json,sys; d=json.load(open(sys.argv[1])); assert sys.argv[2] in d" "$MANIFEST" "$field" 2>/dev/null; then
       pass "plugin.json has '$field' field"
     else
       fail "plugin.json missing '$field' field"
