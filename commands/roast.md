@@ -123,7 +123,7 @@ Use the Write tool. The file should contain the complete synthesized report with
 ```yaml
 ---
 plugin: grill
-version: 1.2.0
+version: 1.2.3
 date: <YYYY-MM-DD>
 target: <target-path>
 style: <chosen style name(s)>

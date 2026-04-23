@@ -1,11 +1,12 @@
 {
   "name": "grill",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Deep codebase interrogation \u2014 multi-angle architecture review that forces rigorous, actionable analysis",
   "author": {
     "name": "xiaolai"
   },
   "license": "MIT",
+  "repository": "https://github.com/xiaolai/grill-for-claude",
   "keywords": [
     "code-review",
     "architecture",

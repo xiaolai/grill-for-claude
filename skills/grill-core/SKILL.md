@@ -56,12 +56,25 @@ Every finding MUST include:
 
 ## Zero Findings
 
-If an analysis area yields no findings, output a single entry with severity `[GOOD]` stating what was checked and that no issues were found. Example:
+If an analysis area yields no findings, output a single entry with severity `[GOOD]` stating what was checked and that no issues were found.
 
-> - **File**: N/A
-> - **Observation**: SQL injection analysis — no raw queries or string interpolation found in database access layer
-> - **Severity**: `[GOOD]`
-> - **Evidence**: All queries use parameterized ORM methods (`src/db/*.ts`)
+<example>
+- **File**: N/A
+- **Observation**: SQL injection analysis — no raw queries or string interpolation found in database access layer
+- **Severity**: `[GOOD]`
+- **Evidence**: All queries use parameterized ORM methods (`src/db/*.ts`)
+</example>
+
+For contrast, a `[CRITICAL]` finding that DOES require action looks like this:
+
+<example>
+- **File**: `src/api/users.ts:42`
+- **Observation**: SQL injection vulnerability — user-supplied `req.query.name` interpolated directly into a raw SQL string passed to `db.query()`
+- **Severity**: `[CRITICAL]`
+- **Evidence**: `` db.query(`SELECT * FROM users WHERE name = '${req.query.name}'`) ``
+- **Proposed change**: Replace with a parameterized query: `db.query('SELECT * FROM users WHERE name = $1', [req.query.name])`
+- **Tradeoff**: Gain: closes data-exfiltration and data-loss attack surface. Lose: none — parameterized queries are a drop-in replacement with equal or better performance.
+</example>
 
 Do NOT pad with manufactured low-severity findings to compensate for empty areas.
 
