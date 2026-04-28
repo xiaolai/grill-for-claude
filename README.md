@@ -72,4 +72,4 @@ Then install:
 
 ## License
 
-MIT
+ISC
