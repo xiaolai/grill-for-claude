@@ -1,5 +1,7 @@
 # grill
 
+[![Validated by NLPM](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xiaolai/grill-for-claude/main/nlpm-badge.json)](https://github.com/xiaolai/grill-for-claude/blob/main/nlpm-badge.json)
+
 Deep codebase interrogation — multi-angle architecture review that forces rigorous, actionable analysis.
 
 ## What it does
