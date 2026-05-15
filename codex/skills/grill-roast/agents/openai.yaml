@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grill: Roast"
+  short_description: "Multi-angle codebase interrogation with severity-tagged findings and a fixing plan"
+  default_prompt: "Use $grill-roast to interrogate this codebase from multiple angles."

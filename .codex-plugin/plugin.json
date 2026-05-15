@@ -1,0 +1,33 @@
+{
+  "name": "grill",
+  "version": "1.2.5",
+  "description": "Deep codebase interrogation — multi-angle architecture review that forces rigorous, actionable analysis",
+  "author": {
+    "name": "xiaolai"
+  },
+  "homepage": "https://github.com/xiaolai/grill-for-claude",
+  "repository": "https://github.com/xiaolai/grill-for-claude",
+  "license": "ISC",
+  "keywords": [
+    "code-review",
+    "architecture",
+    "interrogation",
+    "audit",
+    "codebase-analysis"
+  ],
+  "skills": "./codex/skills/",
+  "interface": {
+    "displayName": "Grill",
+    "shortDescription": "Multi-angle codebase interrogation with 6 specialized analysis skills",
+    "longDescription": "Use Grill to interrogate a codebase from 6 angles in parallel — architecture, error handling, security, testing, edge cases, and recon. Five review styles (including Paranoid Mode) and 8 add-on pressure tests produce a single synthesized report with severity-tagged findings, concrete evidence, and an ordered fixing plan.",
+    "developerName": "xiaolai",
+    "category": "Coding",
+    "capabilities": ["Read"],
+    "defaultPrompt": [
+      "Run a grill review on this codebase.",
+      "Use $grill-roast to interrogate this repo from multiple angles."
+    ],
+    "websiteURL": "https://github.com/xiaolai/grill-for-claude",
+    "screenshots": []
+  }
+}
