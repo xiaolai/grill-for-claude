@@ -20,20 +20,31 @@ Part of the [xiaolai plugin marketplace](https://github.com/xiaolai/claude-plugi
 
 ### Claude Code
 
-Add the marketplace once, then install:
+Two install paths — both reach the same code. Pick one:
+
+**Via Anthropic's official community marketplace** (curated; updates lag the maintainer's marketplace by up to ~24h):
+
+```
+/plugin marketplace add anthropics/claude-plugins-community
+/plugin install grill@claude-community
+```
+
+**Via the xiaolai marketplace** (latest version lands here first):
 
 ```
 /plugin marketplace add xiaolai/claude-plugin-marketplace
 /plugin install grill@xiaolai
 ```
 
-> **Install fails with "Plugin not found in marketplace 'xiaolai'"?** Your local marketplace clone is stale. Run `claude plugin marketplace update xiaolai` and retry — `plugin install` does not auto-refresh.
+> **Install fails with "Plugin not found in marketplace 'xiaolai'"?** Your local marketplace clone is stale. Run `claude plugin marketplace update xiaolai` and retry — `plugin install` does not auto-refresh. (The community marketplace doesn't have this caveat.)
 
-| Scope | Command | Effect |
-|-------|---------|--------|
+| Scope | Command (xiaolai) | Effect |
+|-------|--------------------|--------|
 | **User** (default) | `/plugin install grill@xiaolai` | Available in all your projects |
 | **Project** | `/plugin install grill@xiaolai --scope project` | Shared with team via `.claude/settings.json` |
 | **Local** | `/plugin install grill@xiaolai --scope local` | Only you, only this repo |
+
+The same `--scope` flags work with the `@claude-community` variant.
 
 ### OpenAI Codex CLI
 
