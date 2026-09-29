@@ -1,6 +1,7 @@
 ---
 name: architecture
-description: Use this agent to deeply analyze core architecture — entry points, module boundaries, dependency graph, data flow, and structural patterns. Part of the grill deep-dive phase.
+description: |
+  Use this agent to deeply analyze core architecture — entry points, module boundaries, dependency graph, data flow, and structural patterns. Part of the grill deep-dive phase.
 
   <example>
   Context: Deep-diving into codebase architecture during a grill review
@@ -19,7 +20,6 @@ description: Use this agent to deeply analyze core architecture — entry points
   Architecture agent is the right choice when the problem is structural — dependency direction, module coupling, or circular references.
   </commentary>
   </example>
-
 model: opus
 color: blue
 tools: Read, Glob, Grep

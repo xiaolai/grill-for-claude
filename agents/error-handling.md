@@ -1,6 +1,7 @@
 ---
 name: error-handling
-description: Use this agent to analyze error handling, logging, observability, and configuration management across a codebase. Part of the grill deep-dive phase.
+description: |
+  Use this agent to analyze error handling, logging, observability, and configuration management across a codebase. Part of the grill deep-dive phase.
 
   <example>
   Context: Analyzing error handling during a grill review
@@ -19,7 +20,6 @@ description: Use this agent to analyze error handling, logging, observability, a
   Silent failures and missing observability are the primary targets of the error-handling agent, not just whether try/catch is present.
   </commentary>
   </example>
-
 model: opus
 color: yellow
 tools: Read, Glob, Grep

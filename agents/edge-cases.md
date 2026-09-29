@@ -1,6 +1,7 @@
 ---
 name: edge-cases
-description: Use this agent to hunt for edge cases, race conditions, boundary values, partial failures, and implicit assumptions across a codebase. Part of the grill deep-dive phase (Paranoid Mode).
+description: |
+  Use this agent to hunt for edge cases, race conditions, boundary values, partial failures, and implicit assumptions across a codebase. Part of the grill deep-dive phase (Paranoid Mode).
 
   <example>
   Context: Running Paranoid Mode during a grill review
@@ -19,7 +20,6 @@ description: Use this agent to hunt for edge cases, race conditions, boundary va
   Edge-cases agent is the right choice when hunting for a class of assumption-violation bugs, not just during broad grill reviews.
   </commentary>
   </example>
-
 model: opus
 color: magenta
 tools: Read, Glob, Grep

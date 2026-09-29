@@ -1,6 +1,7 @@
 ---
 name: testing
-description: Use this agent to analyze test coverage, test quality, CI/CD setup, and testing infrastructure. Part of the grill deep-dive phase.
+description: |
+  Use this agent to analyze test coverage, test quality, CI/CD setup, and testing infrastructure. Part of the grill deep-dive phase.
 
   <example>
   Context: Analyzing testing during a grill review
@@ -19,7 +20,6 @@ description: Use this agent to analyze test coverage, test quality, CI/CD setup,
   Testing agent is the right choice for coverage mapping before new development, not just post-hoc audits.
   </commentary>
   </example>
-
 model: opus
 color: green
 tools: Read, Glob, Grep

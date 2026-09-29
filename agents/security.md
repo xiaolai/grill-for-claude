@@ -1,6 +1,7 @@
 ---
 name: security
-description: Use this agent to analyze the security surface of a codebase — authentication, authorization, input validation, secrets handling, and dependency vulnerabilities. Part of the grill deep-dive phase.
+description: |
+  Use this agent to analyze the security surface of a codebase — authentication, authorization, input validation, secrets handling, and dependency vulnerabilities. Part of the grill deep-dive phase.
 
   <example>
   Context: Analyzing security during a grill review
@@ -19,7 +20,6 @@ description: Use this agent to analyze the security surface of a codebase — au
   Security agent is useful proactively, not only during grill reviews — it covers concrete exploit scenarios, not just theoretical risks.
   </commentary>
   </example>
-
 model: opus
 color: red
 tools: Read, Glob, Grep

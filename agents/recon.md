@@ -1,6 +1,7 @@
 ---
 name: recon
-description: Use this agent for initial codebase reconnaissance — quickly surveys project structure, tech stack, config files, and existing documentation to establish context before deeper analysis.
+description: |
+  Use this agent for initial codebase reconnaissance — quickly surveys project structure, tech stack, config files, and existing documentation to establish context before deeper analysis.
 
   <example>
   Context: Starting a codebase review
@@ -19,7 +20,6 @@ description: Use this agent for initial codebase reconnaissance — quickly surv
   Recon is the right first step when a developer is orienting to a new codebase, not just during a full grill review.
   </commentary>
   </example>
-
 model: opus
 color: cyan
 tools: Read, Glob, Grep, Bash
