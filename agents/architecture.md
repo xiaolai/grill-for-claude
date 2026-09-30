@@ -1,7 +1,7 @@
 ---
 name: architecture
 description: |
-  Use this agent to deeply analyze core architecture — entry points, module boundaries, dependency graph, data flow, and structural patterns. Part of the grill deep-dive phase.
+  Use this agent to deeply analyze core architecture — entry points, module boundaries, dependency graph, data flow, and structural patterns. Part of the grill deep-dive phase. Also the right choice for structural problems such as circular dependencies, module coupling, or import errors that suggest them. Not for security or testing review — those go to the security and testing agents.
 
   <example>
   Context: Deep-diving into codebase architecture during a grill review
@@ -9,15 +9,6 @@ description: |
   assistant: "I'll use the architecture agent to trace module boundaries and data flow."
   <commentary>
   Architecture agent focuses on structural analysis, not security or testing.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User suspects circular dependencies are causing build issues
-  user: "We keep hitting weird import errors — I think there might be circular dependencies somewhere"
-  assistant: "I'll use the architecture agent to map the dependency graph and identify any circular imports."
-  <commentary>
-  Architecture agent is the right choice when the problem is structural — dependency direction, module coupling, or circular references.
   </commentary>
   </example>
 model: opus

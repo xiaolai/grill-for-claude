@@ -1,7 +1,7 @@
 ---
 name: testing
 description: |
-  Use this agent to analyze test coverage, test quality, CI/CD setup, and testing infrastructure. Part of the grill deep-dive phase.
+  Use this agent to analyze test coverage, test quality, CI/CD setup, and testing infrastructure. Part of the grill deep-dive phase. Also use it to map which modules are tested and which are not before starting new development. Not for reviewing the production code itself — structure, security, and failure modes go to the architecture, security, and edge-cases agents.
 
   <example>
   Context: Analyzing testing during a grill review
@@ -9,15 +9,6 @@ description: |
   assistant: "I'll use the testing agent to analyze coverage, test quality, and CI/CD."
   <commentary>
   Testing agent covers test coverage, quality, CI/CD, and fixtures.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User is onboarding to a project and needs to understand what is and isn't tested
-  user: "Before I start adding features, I need to know which parts of this codebase have test coverage and which are completely untested"
-  assistant: "I'll use the testing agent to map coverage across modules, identify the riskiest untested paths, and assess the CI/CD setup."
-  <commentary>
-  Testing agent is the right choice for coverage mapping before new development, not just post-hoc audits.
   </commentary>
   </example>
 model: opus
@@ -51,13 +42,13 @@ Start your output with `## [Agent: testing] Findings`.
 - Test naming: can you understand what failed from the test name?
 - Assertion quality: meaningful assertions vs just "doesn't throw"
 - Flaky test indicators (timeouts, retries, sleep/wait in tests)
-- Test doubles: appropriate use of mocks/stubs vs over-mocking
+- Test doubles: are mocks/stubs limited to boundaries (network, filesystem, clock, external services), or do tests mock the unit under test or its internal collaborators (over-mocking)?
 
 ### 3. Test Infrastructure
 - Test framework and runner setup
 - Test fixtures and factories — reusable or copy-pasted?
 - Database/service setup for integration tests
-- Snapshot testing: appropriate use or snapshot bloat?
+- Snapshot testing: flag snapshots over 100 lines, or snapshots of a whole object or rendered tree where a targeted assertion would do (snapshot bloat)
 - Performance/load tests present?
 
 ### 4. CI/CD Pipeline

@@ -1,7 +1,7 @@
 ---
 name: error-handling
 description: |
-  Use this agent to analyze error handling, logging, observability, and configuration management across a codebase. Part of the grill deep-dive phase.
+  Use this agent to analyze error handling, logging, observability, and configuration management across a codebase. Part of the grill deep-dive phase. Also the right choice for silent failures — errors swallowed by catch blocks that never reach the logs. Not for secrets handling or sensitive data in logs beyond a brief note — those go to the security agent.
 
   <example>
   Context: Analyzing error handling during a grill review
@@ -9,15 +9,6 @@ description: |
   assistant: "I'll use the error-handling agent to trace error paths and logging."
   <commentary>
   Error-handling agent covers errors, logging, observability, and config.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User reports that errors are being silently swallowed in production
-  user: "We're seeing silent failures — things break but nothing shows up in logs"
-  assistant: "I'll use the error-handling agent to find catch blocks that swallow errors and trace the logging configuration."
-  <commentary>
-  Silent failures and missing observability are the primary targets of the error-handling agent, not just whether try/catch is present.
   </commentary>
   </example>
 model: opus
@@ -47,8 +38,8 @@ Start your output with `## [Agent: error-handling] Findings`.
 ### 2. Error Recovery
 - Retry logic: is it present where needed? Are there backoff strategies?
 - Graceful degradation: does the system degrade or crash?
-- Transaction handling: are partial failures handled correctly?
-- Resource cleanup: are connections/files/handles properly released on error?
+- Transaction handling: when a later step of a multi-step write fails, are the earlier steps rolled back or compensated?
+- Resource cleanup: are connections/files/handles released on every error path (in a finally/defer/with/using block or equivalent)?
 
 ### 3. Logging & Observability
 - Logging framework and configuration

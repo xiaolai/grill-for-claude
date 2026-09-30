@@ -1,7 +1,7 @@
 ---
 name: edge-cases
 description: |
-  Use this agent to hunt for edge cases, race conditions, boundary values, partial failures, and implicit assumptions across a codebase. Part of the grill deep-dive phase (Paranoid Mode).
+  Use this agent to hunt for edge cases, race conditions, boundary values, partial failures, and implicit assumptions across a codebase. Part of the grill deep-dive phase (Paranoid Mode). Also use it outside a full review to hunt a whole class of assumption violations after an incident, such as code that assumes a non-empty input. Not for logging, observability, or configuration review — those belong to the error-handling agent.
 
   <example>
   Context: Running Paranoid Mode during a grill review
@@ -11,17 +11,8 @@ description: |
   Edge-cases agent covers concurrency hazards, boundary values, partial failures, error propagation, and implicit assumptions.
   </commentary>
   </example>
-
-  <example>
-  Context: User experienced a production incident from an unexpected input and wants to harden the system
-  user: "We had an outage last week because a batch job received an empty list and blew up — I want to find all similar assumptions in the codebase"
-  assistant: "I'll use the edge-cases agent to systematically search for implicit assumptions about non-empty inputs, boundary values, and partial failure states across the codebase."
-  <commentary>
-  Edge-cases agent is the right choice when hunting for a class of assumption-violation bugs, not just during broad grill reviews.
-  </commentary>
-  </example>
 model: opus
-color: magenta
+color: purple
 tools: Read, Glob, Grep
 skills:
   - grill:grill-core

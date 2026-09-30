@@ -1,7 +1,7 @@
 ---
 name: security
 description: |
-  Use this agent to analyze the security surface of a codebase — authentication, authorization, input validation, secrets handling, and dependency vulnerabilities. Part of the grill deep-dive phase.
+  Use this agent to analyze the security surface of a codebase — authentication, authorization, input validation, secrets handling, and dependency vulnerabilities. Part of the grill deep-dive phase. Also useful proactively, for example before an external pen test, to find concrete exploit scenarios first. Not for configuration management or general logging review — those belong to the error-handling agent.
 
   <example>
   Context: Analyzing security during a grill review
@@ -9,15 +9,6 @@ description: |
   assistant: "I'll use the security agent to analyze auth, input validation, and secrets handling."
   <commentary>
   Security agent covers auth, input validation, secrets, and dependency risks.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User is preparing for a security audit and wants to find issues before auditors do
-  user: "We have an external pen test next week — what are the most likely issues they'll find?"
-  assistant: "I'll use the security agent to scan for auth gaps, injection vectors, hardcoded secrets, and dependency vulnerabilities before the pen testers arrive."
-  <commentary>
-  Security agent is useful proactively, not only during grill reviews — it covers concrete exploit scenarios, not just theoretical risks.
   </commentary>
   </example>
 model: opus

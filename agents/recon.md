@@ -1,7 +1,7 @@
 ---
 name: recon
 description: |
-  Use this agent for initial codebase reconnaissance — quickly surveys project structure, tech stack, config files, and existing documentation to establish context before deeper analysis.
+  Use this agent for initial codebase reconnaissance — quickly surveys project structure, tech stack, config files, and existing documentation to establish context before deeper analysis. Also use it to orient in an unfamiliar or freshly cloned repository before making changes. Not for analysis or critique — it only observes and reports; the other grill agents do the deep analysis.
 
   <example>
   Context: Starting a codebase review
@@ -9,15 +9,6 @@ description: |
   assistant: "I'll use the recon agent to survey the project first."
   <commentary>
   Recon is always the first step before any deep analysis.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User wants to understand an unfamiliar repository before making changes
-  user: "I just cloned this repo and need to understand what I'm working with before touching anything"
-  assistant: "I'll run the recon agent to map the stack, entry points, and directory layout before we proceed."
-  <commentary>
-  Recon is the right first step when a developer is orienting to a new codebase, not just during a full grill review.
   </commentary>
   </example>
 model: opus
