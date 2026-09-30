@@ -1,6 +1,6 @@
 ---
 name: grill-core
-description: Core conventions for grill analysis agents — output formatting, severity ratings, and evidence standards
+description: "Conventions for grill agents: output format, severity ratings, evidence standards"
 globs: "**/*"
 ---
 
