@@ -1,7 +1,7 @@
 {
   "name": "grill",
-  "version": "1.3.3",
-  "description": "Deep codebase interrogation — multi-angle architecture review that forces rigorous, actionable analysis",
+  "version": "1.4.0",
+  "description": "Deep codebase interrogation \u2014 multi-angle architecture review that forces rigorous, actionable analysis",
   "author": {
     "name": "xiaolai"
   },
@@ -19,10 +19,12 @@
   "interface": {
     "displayName": "Grill",
     "shortDescription": "Multi-angle codebase interrogation with 6 specialized analysis skills",
-    "longDescription": "Use Grill to interrogate a codebase from 6 angles in parallel — architecture, error handling, security, testing, edge cases, and recon. Five review styles (including Paranoid Mode) and 8 add-on pressure tests produce a single synthesized report with severity-tagged findings, concrete evidence, and an ordered fixing plan.",
+    "longDescription": "Use Grill to interrogate a codebase from 6 angles in parallel \u2014 architecture, error handling, security, testing, edge cases, and recon. Five review styles (including Paranoid Mode) and 8 add-on pressure tests produce a single synthesized report with severity-tagged findings, concrete evidence, and an ordered fixing plan.",
     "developerName": "xiaolai",
     "category": "Coding",
-    "capabilities": ["Read"],
+    "capabilities": [
+      "Read"
+    ],
     "defaultPrompt": [
       "Run a grill review on this codebase.",
       "Use $grill-roast to interrogate this repo from multiple angles."

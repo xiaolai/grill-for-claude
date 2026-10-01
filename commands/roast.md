@@ -22,6 +22,16 @@ If `$ARGUMENTS` is empty or no target path was provided, use AskUserQuestion to 
 
 After obtaining the target path, verify it exists and is a directory using the Bash tool. If the path does not exist or is not a directory, inform the user and stop.
 
+## Default quick review
+
+Unless the user explicitly requests a full panel or one of the full review styles below,
+inspect the target in the current context and return at most three evidence-backed findings.
+Do not launch recon or specialist agents in this mode. For each finding give a file and line,
+a concrete failure scenario, severity, and a way to verify it. Clearly separate observed
+failures from hypotheses. Zero findings is a valid result. State the inspected scope and
+remaining uncertainty. After this quick report, stop; run Steps 1–6 only for an explicit
+full review. A user who already requested a style need not select it again.
+
 ## Step 1: Gather Context
 
 Launch the `grill:recon` agent via the Task tool to quickly survey the codebase.

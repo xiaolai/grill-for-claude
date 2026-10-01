@@ -23,6 +23,13 @@ Load `$grill-core` for severity tags, finding format, effort estimates, and evid
 
 If no target path was provided, ask the user which codebase or directory to review. After obtaining the path, verify it exists and is a directory. If the path does not exist or is not a directory, inform the user and stop.
 
+## Default quick review
+
+Unless the user explicitly requests a full panel or a specific review style, work in the current
+context without launching recon or specialist agents/skills. Inspect the target and return at most three evidence-backed findings. For each give a file and line, concrete failure scenario, severity, and verification method. Distinguish observed failures from hypotheses. Zero findings is valid. State the inspected scope and remaining uncertainty.
+After the quick report, stop. Phases 1–6 are the explicit full-review path; do not ask users
+who already chose a style to choose it again.
+
 ## Phase 1: Reconnaissance
 
 Run `$grill-recon` to survey the codebase. Save its output — you will pass the recon summary to every deep-dive skill so they focus on the detected stack instead of re-discovering it.

@@ -116,3 +116,7 @@ All units share the `grill-core` skill, which defines severity tags, finding for
 ## License
 
 ISC
+
+### Quick by default
+
+The roast entry runs a bounded review in the current context by default, with at most three evidence-backed findings. Request a full panel or named style explicitly for the multi-agent workflow. A clean result is valid; finding counts are never a quality target.

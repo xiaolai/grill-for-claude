@@ -4,7 +4,7 @@
     "name": "xiaolai"
   },
   "metadata": {
-    "description": "grill — deep codebase interrogation by xiaolai"
+    "description": "grill \u2014 deep codebase interrogation by xiaolai"
   },
   "plugins": [
     {
@@ -13,8 +13,8 @@
         "source": "github",
         "repo": "xiaolai/grill-for-claude"
       },
-      "description": "Deep codebase interrogation — multi-angle architecture review with 6 specialized agents, 5 review styles (including Paranoid Mode), and 8 add-on pressure tests. v1.3.0 ships the Codex CLI plugin layout alongside the Claude Code layout.",
-      "version": "1.3.3",
+      "description": "Deep codebase interrogation \u2014 multi-angle architecture review with 6 specialized agents, 5 review styles (including Paranoid Mode), and 8 add-on pressure tests. v1.3.0 ships the Codex CLI plugin layout alongside the Claude Code layout.",
+      "version": "1.4.0",
       "author": {
         "name": "xiaolai"
       },
